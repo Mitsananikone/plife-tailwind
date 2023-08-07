@@ -43,6 +43,35 @@ html, body {
   content: '\00a0'; /* Non-breaking space */
 }
 
+.fade-in {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.fade-out {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    color: #cbd5e0; /* Original gray color */
+  }
+  to {
+    color: #ffffff; /* White color */
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    color: #ffffff; /* Original gray color */
+  }
+  to {
+    color: #cbd5e0; /* White color */
+  }
+}
+
+
 /* body::before {
   content: "";
   position: absolute;

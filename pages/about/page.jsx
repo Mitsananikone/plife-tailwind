@@ -69,7 +69,7 @@ export default function AboutPage() {
           procedures at an affordable cost. With the added bonus of a holiday
           destination, you can relax and rejuvenate both inside and out. Let us
           help you enhance your natural beauty and boost your confidence.
-          Contact us today to start planning your cosmetic surgery holiday!”
+          Contact us today to start planning your cosmetic surgery holiday!“
         </p>
       </div>
       <button

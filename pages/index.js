@@ -1,5 +1,6 @@
 import  LandingPage  from './home/page'
 import AboutPage from './about/page';
+import ProcedurePage from './procedures/page';
 
  export default function Home() {
     return (
@@ -7,7 +8,10 @@ import AboutPage from './about/page';
         <div className="flex items-center justify-center h-full w-screen m-0 p-0">
             
             {/* <LandingPage /> */}
-<AboutPage/>
+            {/* <AboutPage/> */}
+            <ProcedurePage/>
+
+
         {/* </div> */}
      </div>
     );
