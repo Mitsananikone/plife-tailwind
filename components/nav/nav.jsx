@@ -1,50 +1,100 @@
-import { useState } from 'react';
+/** @format */
+
+import { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    'ABOUT', 'PROCEDURES', 'FAQ', 'RESOURCES', 'QUOTE', 'PRICING', 'PROMO',
+    { name: "ABOUT", link: "/about/page" },
+    { name: "BRAND", link: "/home/page" },
+    { name: "PROCEDURES", link: "/procedures/page" },
+    { name: "FAQ", link: "#faq" },
+    { name: "RESOURCES", link: "#resources" },
+    { name: "QUOTE", link: "#quote" },
+    { name: "PRICING", link: "#pricing" },
+    { name: "PROMO", link: "#promo" },
   ];
 
   return (
     <nav className="p-4 bg-transparent">
       <div className="flex items-center justify-between">
-        <img src="/images/logo.svg" alt="Logo" className="logo" />
-        <div className="hidden md:flex ml-auto"> {/* Align to right */}
+        <Link href="/home/page" passHref>
+          <img
+            src="/images/logo.svg"
+            alt="Logo"
+            className="logo cursor-pointer"
+          />
+        </Link>
+        <div className="hidden md:flex ml-auto">
           {menuItems.map((item, index) => (
-            <a
+            <Link
+              href={
+                item.link ||
+                `#${item.name?.toLowerCase() || item.toLowerCase()}`
+              }
               key={index}
-              href={`#${item.toLowerCase()}`}
-              className="text-lg uppercase text-white ml-16 transition-all ease-in-out duration-300"
-              style={{
-                marginLeft: '4em', // Adding 4em margin to the left of each item
-                textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
-                transition: 'all 0.3s ease',
-              }}
-              onMouseOver={(e) => { e.target.style.textShadow = '2px 2px 4px #2119B4'; }}
-              onMouseOut={(e) => { e.target.style.textShadow = '1px 1px 2px rgba(0,0,0,0.3)'; }}
+              passHref
             >
-              {item}
-            </a>
+              <span
+                className="text-lg uppercase text-white ml-16 cursor-pointer transition-all ease-in-out duration-300"
+                style={{
+                  marginLeft: "4em",
+                  textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.textShadow = "2px 2px 4px #2119B4";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.textShadow = "1px 1px 2px rgba(0,0,0,0.3)";
+                }}
+              >
+                {item.name || item}
+              </span>
+            </Link>
           ))}
         </div>
-        <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+
+        <button
+          className="md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
           <div className="h-1 w-6 mb-1 bg-black"></div>
           <div className="h-1 w-6 mb-1 bg-black"></div>
           <div className="h-1 w-6 bg-black"></div>
         </button>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden mt-4 space-y-4">
+        <div className="hidden md:flex ml-auto">
           {menuItems.map((item, index) => (
-            <a
+            <Link
               key={index}
-              href={`#${item.toLowerCase()}`}
-              className="text-lg uppercase text-black hover:text-#2119B4 transition-all"
+              href={
+                item.link ||
+                `#${item.name?.toLowerCase() || item.toLowerCase()}`
+              }
+              passHref
+              legacyBehavior
             >
-              {item}
-            </a>
+              <span
+                className="text-lg uppercase text-white ml-16 cursor-pointer transition-all ease-in-out duration-300"
+                style={{
+                  marginLeft: "4em",
+                  textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.textShadow = "2px 2px 4px #2119B4";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.textShadow = "1px 1px 2px rgba(0,0,0,0.3)";
+                }}
+              >
+                {item.name || item}
+              </span>
+            </Link>
           ))}
         </div>
       )}
