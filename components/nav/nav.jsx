@@ -18,8 +18,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="p-4 bg-transparent">
-      <div className="flex items-center justify-between">
+    <nav className="p-4 bg-transparent sticky top-0 z-50">
+       <div className="flex items-center justify-between">
         <Link href="/home/page" passHref>
           <img
             src="/images/logo.svg"

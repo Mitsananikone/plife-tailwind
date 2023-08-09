@@ -121,7 +121,7 @@ export default function ProceduresCard() {
         <div className="flex justify-center cursor-pointer">
           <Link href="/procedures/type/page" passHref>
             <button
-              className="bg-gray-300 opacity-60 text-black font-bold py-2 px-4 rounded whitespace-nowrap h-16 shadow-lg hover:shadow-xl transition-all mt-8 w-64 hover:text-white"
+              className="bg-gray-300 opacity-60 text-black font-bold py-2 px-4 rounded whitespace-nowrap h-16 shadow-lg hover:shadow-xl transition-all mt-8 w-64 hover:text-gray-700"
               style={{ borderRadius: "4px" }}
             >
               View Details

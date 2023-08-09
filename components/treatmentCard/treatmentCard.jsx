@@ -3,7 +3,7 @@ import React from 'react';
 const TreatmentCard = ({ imageUrl, description }) => {
   return (
     <div
-      className="group w-64 relative border border-gray-300 shadow-xl rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+      className="group w-80 relative border border-gray-300 shadow-xl rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 cursor-pointer"
     >
       <div className="h-64 flex items-center justify-center">
         <img
